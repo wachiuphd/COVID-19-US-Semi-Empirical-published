@@ -1,0 +1,36 @@
+﻿location,mindate,maxdate,Data.50.,Data.2.5.,Data.97.5.,Source,URL
+Belgium,2020-03-30,2020-04-05,2.9,2.4,3.5,Herzog et al. 2020,https://doi.org/10.1101/2020.06.08.20125179
+Belgium,2020-04-20,2020-04-26,6,5.2,6.9,Herzog et al. 2020,https://doi.org/10.1101/2020.06.08.20125179
+Belgium,2020-05-18,2020-05-25,6.9,6.1,7.8,Herzog et al. 2020,https://doi.org/10.1101/2020.06.08.20125179
+Belgium,2020-06-08,2020-06-13,5.5,4.7,6.4,Herzog et al. 2020,https://doi.org/10.1101/2020.06.08.20125179
+Belgium,2020-06-29,2020-07-04,4.5,3.8,5.3,Herzog et al. 2020,https://doi.org/10.1101/2020.06.08.20125179
+Canada,2020-05-19,2020-06-18,0.7,0.6,0.8,Canadian Blood Services (2020),https://www.covid19immunitytaskforce.ca/wp-content/uploads/2020/09/COVID-19-Public-Report_2.pdf
+Denmark,2020-04-06,2020-05-03,1.9,0.8,2.3,Erikstrup et al. (2020),https://doi.org/10.1093/cid/ciaa849
+England,2020-02-01,2020-03-31,1.8,0.8,3.5,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911002/Weekly_COVID19_Surveillance_Report_week_34_FINAL.pdf
+England,2020-02-01,2020-03-31,1.4,0.1,5.9,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911002/Weekly_COVID19_Surveillance_Report_week_34_FINAL.pdf
+England,2020-03-16,2020-06-30,3.9,3.4,4.4,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/907954/Weekly_COVID19_Surveillance_Report_week_32_2.pdf
+England,2020-04-01,2020-04-30,4.5,2.1,8.4,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911002/Weekly_COVID19_Surveillance_Report_week_34_FINAL.pdf
+England,2020-04-01,2020-04-30,6.6,4.8,8.8,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911002/Weekly_COVID19_Surveillance_Report_week_34_FINAL.pdf
+England,2020-04-26,2020-07-26,6.2,5.6,6.9,Office of National Statistics,https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronaviruscovid19infectionsurveypilot/englandandwales14august2020
+England,2020-04-26,2020-07-08,6.3,5.6,7.1,Office of National Statistics,https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronaviruscovid19infectionsurveypilot/england17july2020
+England,2020-04-30,2020-05-22,8.6,8,9.2,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/912973/Weekly_COVID19_Surveillance_Report_week_35_FINAL.PDF
+England,2020-05-01,2020-05-31,2.7,0.7,0.9,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911002/Weekly_COVID19_Surveillance_Report_week_34_FINAL.pdf
+England,2020-05-01,2020-05-31,7.8,6.3,9.6,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911002/Weekly_COVID19_Surveillance_Report_week_34_FINAL.pdf
+England,2020-05-22,2020-06-08,8.2,7.5,8.9,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/912973/Weekly_COVID19_Surveillance_Report_week_35_FINAL.PDF
+England,2020-06-01,2020-08-02,3.2,2.5,4.1,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911002/Weekly_COVID19_Surveillance_Report_week_34_FINAL.pdf
+England,2020-06-01,2020-08-02,4.9,2.7,8.1,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911002/Weekly_COVID19_Surveillance_Report_week_34_FINAL.pdf
+England,2020-06-08,2020-07-06,7.1,6.6,7.6,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/912973/Weekly_COVID19_Surveillance_Report_week_35_FINAL.PDF
+England,2020-06-20,2020-07-13,6,5.8,6.1,Ward et al. (2020),https://www.medrxiv.org/content/10.1101/2020.08.12.20173690v2
+England,2020-07-13,2020-07-21,6.8,6.3,7.3,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/912973/Weekly_COVID19_Surveillance_Report_week_35_FINAL.PDF
+England,2020-07-20,2020-08-16,5.5,5,6,Public Health England,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/912973/Weekly_COVID19_Surveillance_Report_week_35_FINAL.PDF
+Greece,2020-03-01,2020-03-31,0.02,0,0.25,Bogogiannidou et al. (2020),https://dx.doi.org/10.2807%2F1560-7917.ES.2020.25.31.2001369
+Greece,2020-04-01,2020-04-30,0.25,0.02,0.5,Bogogiannidou et al. (2020),https://dx.doi.org/10.2807%2F1560-7917.ES.2020.25.31.2001369
+Hungary,2020-05-01,2020-05-16,0.68,0.5,0.85,Merkely et al. (2020),https://doi.org/10.1007/s11357-020-00226-9
+Iceland,2020-04-01,2020-04-04,0.6,0.3,0.9,Gudbjartsson et al. (2020),https://doi.org/10.1056/NEJMoa2006100
+India,2020-05-11,2020-05-25,0.7,0.6,0.8,Indian Council of Medical Research,Multiple
+Ireland,2020-06-22,2020-07-16,1.7,1.1,2.4,Igoe et al. (2020),https://www.hpsc.ie/az/respiratory/coronavirus/novelcoronavirus/scopi/SCOPI%20report%20preliminary%20results%20final%20version.pdf
+Luxembourg,2020-04-15,2020-05-05,2.06,1.34,2.77,Snoeck et al. (2020),https://www.medrxiv.org/content/10.1101/2020.05.11.20092916v1
+Norway,2020-04-20,2020-05-17,1.1,0.5,2,Tunheim et al. (2020),https://www.fhi.no/globalassets/dokumenterfiler/rapporter/2020/covid-19/seroprevalence-of-sars-cov-2-in-thenorwegian-population_report-26-06-2020.pdf
+Portugal,2020-05-21,2020-07-08,1.9,1.4,2.5,Rodrigues (2020),http://www.insa.min-saude.pt/resultadospreliminares-do-primeiro-inquerito-serologico-nacional-covid-19-relatorio/
+Russia,2020-06-10,2020-06-10,14,13.9,14.1,Kiselyov 2020,https://www.themoscowtimes.com/2020/06/10/1-in-7-russians-have-coronavirus-immunity-official-a70540
+Slovenia,2020-04-20,2020-05-01,0.15,0.03,0.47,Vodicar et al. (2020),https://doi.org/10.1016/j.cmi.2020.07.013

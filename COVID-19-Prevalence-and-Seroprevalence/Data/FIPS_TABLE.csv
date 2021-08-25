@@ -1,0 +1,53 @@
+"Name","Alpha.code","Numeric.code","Status","numFIPS","pop"
+"United States","US","00","Country",0,328239523
+"Alabama","AL","01","State; counties",1,4903185
+"Alaska","AK","02","State; boroughs",2,731545
+"Arizona","AZ","04","State; counties",4,7278717
+"Arkansas","AR","05","State; counties",5,3017804
+"California","CA","06","State; counties",6,39512223
+"Colorado","CO","08","State; counties",8,5758736
+"Connecticut","CT","09","State; counties",9,3565287
+"Delaware","DE","10","State; counties",10,973764
+"District of Columbia","DC","11","Federal district[4]",11,705749
+"Florida","FL","12","State; counties",12,21477737
+"Georgia","GA","13","State; counties",13,10617423
+"Hawaii","HI","15","State; counties",15,1415872
+"Idaho","ID","16","State; counties",16,1787065
+"Illinois","IL","17","State; counties",17,12671821
+"Indiana","IN","18","State; counties",18,6732219
+"Iowa","IA","19","State; counties",19,3155070
+"Kansas","KS","20","State; counties",20,2913314
+"Kentucky","KY","21","State; counties",21,4467673
+"Louisiana","LA","22","State; parishes",22,4648794
+"Maine","ME","23","State; counties",23,1344212
+"Maryland","MD","24","State; counties",24,6045680
+"Massachusetts","MA","25","State; counties",25,6892503
+"Michigan","MI","26","State; counties",26,9986857
+"Minnesota","MN","27","State; counties",27,5639632
+"Mississippi","MS","28","State; counties",28,2976149
+"Missouri","MO","29","State; counties",29,6137428
+"Montana","MT","30","State; counties",30,1068778
+"Nebraska","NE","31","State; counties",31,1934408
+"Nevada","NV","32","State; counties",32,3080156
+"New Hampshire","NH","33","State; counties",33,1359711
+"New Jersey","NJ","34","State; counties",34,8882190
+"New Mexico","NM","35","State; counties",35,2096829
+"New York","NY","36","State; counties",36,19453561
+"North Carolina","NC","37","State; counties",37,10488084
+"North Dakota","ND","38","State; counties",38,762062
+"Ohio","OH","39","State; counties",39,11689100
+"Oklahoma","OK","40","State; counties",40,3956971
+"Oregon","OR","41","State; counties",41,4217737
+"Pennsylvania","PA","42","State; counties",42,12801989
+"Rhode Island","RI","44","State; counties",44,1059361
+"South Carolina","SC","45","State; counties",45,5148714
+"South Dakota","SD","46","State; counties",46,884659
+"Tennessee","TN","47","State; counties",47,6829174
+"Texas","TX","48","State; counties",48,28995881
+"Utah","UT","49","State; counties",49,3205958
+"Vermont","VT","50","State; counties",50,623989
+"Virginia","VA","51","State; counties",51,8535519
+"Washington","WA","53","State; counties",53,7614893
+"West Virginia","WV","54","State; counties",54,1792147
+"Wisconsin","WI","55","State; counties",55,5822434
+"Wyoming","WY","56","State; counties",56,578759

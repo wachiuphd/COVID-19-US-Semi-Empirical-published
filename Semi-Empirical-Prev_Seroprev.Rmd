@@ -1,0 +1,142 @@
+---
+title: "Semi-Empirical Prevalence and Seroprevalence"
+author: "Weihsueh A. Chiu and Martial L. Ndeffo Mbah"
+date: "12/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE,echo=FALSE,warning=FALSE,message=FALSE}
+library(ggplot2)
+library(ggpmisc)
+library(ggpubr)
+library(lme4)
+library(ggforce)
+library(ggstance)
+library(ggrepel)
+library(usmap)
+library(lubridate)
+library(scales)
+knitr::opts_chunk$set(echo = TRUE,dpi=300)
+source("setup_data.R")
+
+alldat$pop <- fips_table[alldat$state,"pop"]
+
+```
+
+Summary results for each state and for the U.S. overall, with comparisons to seroprevalence data, epidmeiologic models, and cumulative reported cases.
+
+## State-by-state seroprevalence
+
+```{r plot sero,echo=FALSE,warning=FALSE,message=FALSE,fig.height=8,fig.width=12}
+
+predquant<-fread(file.path(mcmcpath,"Posterior_I_SP_dI_ID_Itot_IfracU_Quantiles.csv"))
+predquant<-as.data.frame(predquant)
+predquant$date <- as.Date(predquant$date)
+
+### Extended SEIR predictions
+predfile<-file.path(datafolder,"SEIR-ModelPredictions.csv")
+seirpred<-fread(predfile)
+seirpred$model <- "Extended-SEIR"
+seirpred$date<-as.Date(seirpred$date)
+### Imperial predictions
+imperialpredfile<-file.path(datafolder,"ImperialPredictions.csv")
+imperialpred<-fread(imperialpredfile)
+imperialpred$model <- "Imperial"
+imperialpred$date<-as.Date(imperialpred$date)
+
+pprev<-ggplot()+
+  geom_line(data=imperialpred,
+            aes(x=date,y=N_I_tot.50./1000,linetype="Imperial median"))+
+  geom_line(data=seirpred,
+            aes(x=date,y=N_I_tot.50./1000,linetype="Extended SEIR median"))+
+  geom_ribbon(data=predquant,aes(x=date,ymin=Itot.pct.2.5.,
+                                 ymax=Itot.pct.97.5.,fill="Posterior 95% CrI"),
+              alpha=0.5)+
+  geom_line(data=predquant,aes(x=date,y=Itot.pct.50.,
+                               color="Posterior median"))+
+  scale_fill_viridis_d(begin=0.5,name="")+
+  scale_linetype_manual(name="Epidemiologic Models",values=c(3,2,1))+
+  scale_x_date(date_minor_breaks="1 month",date_breaks = "2 months",
+               date_labels = "%b")+  
+  theme_bw()+theme(legend.position="bottom")+
+  scale_color_viridis_d(begin=0.3,name="Semi-empirical Model")+
+  guides(linetype = guide_legend(order=1),
+         color = guide_legend(order=2),
+         fill = guide_legend(order=3))+
+  ggtitle("State-wide Infection Prevalence")+
+  xlab("Date")+
+  ylab("Prevalence of Active Infection %")+
+  facet_wrap(~state,scales="free_y")
+print(pprev)
+
+psero<-ggplot() + 
+  geom_col(data=alldat,aes(x=date,y=100*meanpositiveCumul/pop,fill="Cumulative\nReported Cases"))+
+  geom_point(data=serodat,aes(x=date,y=Data.50.,shape=Source))+
+  geom_errorbar(data=serodat,aes(x=date,ymin=Data.2.5.,ymax=Data.97.5.))+
+  geom_line(data=predquant,
+            aes(x=date,y=SP.pct.50.,color="Posterior median"))+
+  geom_ribbon(data=predquant,
+              aes(x=date,ymin=SP.pct.2.5.,ymax=SP.pct.97.5.,
+                  fill=" Posterior 95% CrI"),alpha=0.5)+
+  geom_point(data=cdcseroval,aes(x=date,y=Data.50.,shape=Source))+
+  geom_errorbar(data=cdcseroval,aes(x=date,ymin=Data.2.5.,ymax=Data.97.5.))+
+  facet_wrap(~state,scales="free_y")+
+  xlab("Date")+
+  ylab("Seroprevalence %")+
+  scale_x_date(date_minor_breaks="1 month")+
+  ggtitle("State-wide Seroprevalence")+
+  scale_shape_manual(name="Seroprevalence\nData Source",
+                     values=c(18,17,15,16,3,7,1))+
+  scale_color_viridis_d(begin=0.3,name="Semi-empirical Model")+
+  scale_fill_viridis_d(begin=0.5,end=0.9,name="")+
+  guides(shape = guide_legend(order=1,nrow=4),
+         color = guide_legend(order=2),
+         fill = guide_legend(order=3))+
+  theme_bw()+
+  theme(legend.position="bottom")
+print(psero)
+
+```
+
+
+```{r us overall predictions,echo=FALSE,warning=FALSE,message=FALSE,fig.height=8,fig.width=12}
+
+usdat <- aggregate(meanpositiveCumul ~ date,data=alldat[,c("date","meanpositiveCumul")],sum)
+usdat$posPct<- 100*usdat$meanpositiveCumul/sum(fips_table[statesvec,"pop"])
+
+uspredquant<-as.data.frame(fread(file.path(mcmcpath,"US_Posterior_I_SP_dI_ID_Itot_IfracU_Quantiles.csv")))
+uspredquant$date<-as.Date(uspredquant$date)
+usprev<-
+  ggplot(uspredquant) + 
+  geom_ribbon(aes(x=date,ymin=Itot.pct.2.5.,ymax=Itot.pct.97.5.,fill="95% CrI"))+
+  geom_line(aes(x=date,y=Itot.pct.50.,color="Posterior median"))+
+  scale_fill_viridis_d(begin=0.5,end=0.9,name="")+
+  scale_color_viridis_d(name="")+
+  scale_linetype_discrete(name="")+
+  scale_x_date(date_minor_breaks="1 month")+
+  guides(color = guide_legend(order=1),
+         fill = guide_legend(order=2))+
+  theme_bw()+theme(legend.position = "bottom")+
+  ggtitle("Infection prevalence in U.S.")+
+  xlab("Date")+
+  ylab("Infection prevalence %")
+
+print(usprev)
+
+ussero<-ggplot(uspredquant) + 
+  geom_col(data=usdat,aes(x=date,y=posPct,fill="Cumulative\nReported Cases"))+
+    geom_ribbon(aes(x=date,ymin=SP.pct.2.5.,ymax=SP.pct.97.5.,fill="95% CrI"))+
+  geom_line(aes(x=date,y=SP.pct.50.,color="Posterior median"))+
+  scale_fill_viridis_d(begin=0.5,end=0.9,name="")+
+  scale_color_viridis_d(name="")+
+  scale_linetype_discrete(name="")+
+  scale_x_date(date_minor_breaks="1 month")+
+  guides(color = guide_legend(order=1),
+         fill = guide_legend(order=2))+
+  theme_bw()+theme(legend.position = "bottom")+
+  ggtitle("Seroprevalence in U.S.")+
+  xlab("Date")+
+  ylab("Seroprevalence %")
+
+print(ussero)
+```
