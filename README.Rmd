@@ -94,3 +94,7 @@ The script get_intl_post_pred.R uses testing data from OWID and UK government, a
 
 The R Markdown file Semi-Empirical-Prev_Seroprev.Rmd provides a quick summary of state-by-state and US overall results, compared to cumulative cases and published seroprevalence data.
 
+## Code for R shiny web app
+
+The code for the R shiny web app is in the folder
+COVID-19-Prevalence-and-Seroprevalence
