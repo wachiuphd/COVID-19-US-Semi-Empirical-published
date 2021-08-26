@@ -58,8 +58,8 @@ ui <- fluidPage(
                               ". Prevalence and seroprevalence estimates calculated through ",
                               max(predquant.RE$date),".</p><b>Note:</b> No further updates due to availability of COVID-19 vaccinations in January 2021 and <a href='https://covidtracking.com/analysis-updates/giving-thanks-and-looking-ahead-our-data-collection-work-is-done'>ending of COVID Tracking Project data collection in March 2021</a>.")),
     hr(),
-    HTML("<p><b>Citation: </b>Chiu and Ndeffo-Mbah (2021). Using Test Positivity and Reported Case Rates to Estimate State-Level COVID-19 Prevalence and Seroprevalence in the United States. Under Review. doi:<a href=''>XXX.XXX</a>.</p>"),
-    HTML("<p><b>Source code and data (will be made public upon acceptance for publication): </b><a href='https://github.com/wachiuphd/COVID-19-US-Semi-Empirical'>https://github.com/wachiuphd/COVID-19-US-Semi-Empirical</a></p>")
+    HTML("<p><b>Citation: </b>Chiu and Ndeffo-Mbah (2021). Using Test Positivity and Reported Case Rates to Estimate State-Level COVID-19 Prevalence and Seroprevalence in the United States. Provisionally Accepted by PLOS Computational Biology. doi:<a href=''>TBD</a>.</p>"),
+    HTML("<p><b>Source code and data: </b><a href='https://github.com/wachiuphd/COVID-19-US-Semi-Empirical'>https://github.com/wachiuphd/COVID-19-US-Semi-Empirical-published</a></p>")
     
 )
 
