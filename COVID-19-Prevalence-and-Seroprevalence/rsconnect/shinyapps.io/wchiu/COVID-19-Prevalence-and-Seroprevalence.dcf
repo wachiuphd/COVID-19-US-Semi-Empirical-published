@@ -5,9 +5,9 @@ account: wchiu
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3405445
-bundleId: 4834723
+bundleId: 4965226
 url: https://wchiu.shinyapps.io/COVID-19-Prevalence-and-Seroprevalence/
-when: 1626708716.9771
-lastSyncTime: 1626708716.97712
+when: 1629938255.70337
+lastSyncTime: 1629938255.70339
 asMultiple: FALSE
 asStatic: FALSE
