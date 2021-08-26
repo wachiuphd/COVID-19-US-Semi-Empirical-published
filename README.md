@@ -48,37 +48,38 @@ The script get_intl_post_pred.R uses testing data from OWID and UK government, a
 
 ## Manuscript figures - scripts in Figures folder
 
-(1) Figure1BC_Concept.R - Lower 2 panels of Figure 1
+1. Figure1BC_Concept.R - Lower 2 panels of Figure 1
     - Figure1BC_Concept.pdf/jpeg
-(2) Figure2_Seroprevalence.R - Figure 2
+2. Figure2_Seroprevalence.R - Figure 2
     - Figure2_Seroprevalence_posteriors_validation_page.pdf/jpeg
-(3) Figure3_Prevalence.R - Figure 3
+3. Figure3_Prevalence.R - Figure 3
     - Figure3_v1_prevalence_posteriors_page.pdf/jpeg
-(4) Figure4_map.R - Figure 4
+4. Figure4_map.R - Figure 4
     - Figure4_Maps.pdf/jpeg
+    
 ## Supplemental Figures - scripts in Figures folder ()
 
-(S1) SupFig_ParameterPosteriors.R 
+- (S1) SupFig_ParameterPosteriors.R 
     - SupFig_RandomEffects.pdf/jpeg 
-(S2) SupFig_BayesianScatter.R
+- (S2) SupFig_BayesianScatter.R
     - SupFig_Bayesian_scatter.pdf/jpeg 
-(S3) SupFig_BayesianScatter_Validation.R
+- (S3) SupFig_BayesianScatter_Validation.R
     - SupFig_Bayesian_scatter_validation.pdf/jpeg 
-(S4) SupFig_BayesianPrevalenceScatter.R
+- (S4) SupFig_BayesianPrevalenceScatter.R
     - SupFig_Bayesian_prevalence_scatter_comb.pdf/jpeg 
-(S5) SupFig_CurrentPrevSeroprev.R
+- (S5) SupFig_CurrentPrevSeroprev.R
     - SupFig_CurrentEstimates.pdf/jpeg 
-(S6) Created with Figure4_map.R
+- (S6) Created with Figure4_map.R
     - Figure4_Maps.MCMC.n0.5.pdf/jpeg
-(S7) Created with SupFig_CurrentPrevSeroprev.R
+- (S7) Created with SupFig_CurrentPrevSeroprev.R
     - SupFig_CurrentEstimates.MCMC.n0.5
-(S8) SupFig_BiasEstimates.R
+- (S8) SupFig_BiasEstimates.R
     - SupFig_Biases.pdf/jpeg 
-(S9) SupFig_DivergencesStates.R
+- (S9) SupFig_DivergencesStates.R
     - SupFigDivergences.pdf/jpeg 
-(S10) SupFig_Intl_post_pred_obs.R
+- (S10) SupFig_Intl_post_pred_obs.R
     - SupFig_Intl_post_RE_nolog.pdf/jpeg 
-(S11-S14) SupFig_TauSensitivity.R
+- (S11-S14) SupFig_TauSensitivity.R
     - SupFig_TauSensitivity_parameters.pdf/jpeg
     - SupFig_TauSensitivity_SP.pdf/jpeg
     - SupFig_TauSensitivity_I.pdf/jpeg
