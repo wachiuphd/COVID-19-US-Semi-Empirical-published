@@ -91,5 +91,6 @@ The R Markdown file Semi-Empirical-Prev_Seroprev.Rmd provides a quick summary of
 
 ## Code for R shiny web app
 
-The code for the R shiny web app is in the folder
-COVID-19-Prevalence-and-Seroprevalence
+The code for the R shiny web app (https://wchiu.shinyapps.io/COVID-19-Prevalence-and-Seroprevalence/) is in the folder 
+
+- COVID-19-Prevalence-and-Seroprevalence
