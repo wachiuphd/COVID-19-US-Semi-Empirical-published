@@ -78,6 +78,7 @@ for (mcmcpath in c("MCMC","MCMC.n0.5")) {
     #           aes(x=x,y=y,label=paste0(state,"\n",signif(var,2),"%")),
     #           hjust=0.5,vjust=0.5,size=3)+
     scale_size(range=c(0.1,24),limits = c(0,ceiling(max(currentpred$var))),
+               breaks=0:24,
                name="Semi-empirical\nPrevalence %")+
     scale_color_viridis_c(alpha=0.8,option="plasma",direction=-1,
                           limits=c(-100,100),
