@@ -51,15 +51,17 @@ ui <- fluidPage(
         tabPanel("Undiagnosed Prevalence Map", plotOutput("PrevMapPlot",height = "600px")),
         tabPanel("Undiagnosed Prevalence Graph", plotOutput("PrevGraph",height = "600px")),
         tabPanel("Conceptual Model", imageOutput("Concept",height = "800px"),
-                 HTML(paste0("<p>Conceptual model for relationship between test positivity, prevalence of infection, and testing rate. <b>A)</b> Compartmental representation of how the relationships between new infections, undiagnosed and diagnosed prevalence (I<sub>U</sub> and I<sub>D</sub>) and seroprevalence (SP<sub>U</sub> and SP<sub>D</sub>) are modeled for each state, given a bias with power n. All observational inputs are the past τ-day averages of number of positive tests N<sub>+,τ</sub>(t) and number of tests performed N<sub>test,τ</sub>(t), the corresponding test positivity rate P<sub>+,τ</sub>(t) and reported case rate C<sub>+,τ</sub>(t), and the state population size N.  For diagnosed prevalence and seroprevalence, the observational input is the daily reported cases N<sub>+,τ</sub>, and the model parameters are the recovery time after diagnosis T<sub>rec</sub> and the time from infection to seropositivity T<sub>inf</sub>. For undiagnosed prevalence and seroprevalence, our model assumes the test positivity rate is correlated to delayed undiagnosed disease prevalence with a bias parameter b(t) modeled as a negative power function of the testing rate b(t) = [N<sub>test,τ</sub>(t)/N]<sup>–n</sup>. The additional parameters consist of the power parameter n and the initial (missed) seroprevalence SP<sub>o</sub>.  The effective rate parameter 1/T<sub>eff</sub> is time-dependent, and accounts for both T<sub>inf</sub> and ongoing diagnoses so as to not “double count.”  Prevalence and seroprevalence are evaluated with a lag time t<sub>lag</sub>, assumed equal to half the averaging time τ/2. In <b>B)</b>, the diagonal lines represent different values of the bias parameter. In <b>C)</b>, the relationship between testing rate and bias parameter is illustrated. Here the shaded region represents different powers n ranging from 0.1 (lower bound bias) to 0.9 (upper bound bias), the solid line represents n=½.</p>")))
+                 HTML(paste0("<p>Conceptual model for relationship between test positivity, prevalence of infection, and testing rate. <b>A)</b> Compartmental representation of how the relationships between new infections, undiagnosed and diagnosed prevalence (I<sub>U</sub> and I<sub>D</sub>) and seroprevalence (SP<sub>U</sub> and SP<sub>D</sub>) are modeled for each state, given a bias with power n. All observational inputs are the past τ-day averages of number of positive tests N<sub>+,τ</sub>(t) and number of tests performed N<sub>test,τ</sub>(t), the corresponding test positivity rate P<sub>+,τ</sub>(t) and reported case rate C<sub>+,τ</sub>(t), and the state population size N.  For diagnosed prevalence and seroprevalence, the observational input is the daily reported cases N<sub>+,τ</sub>, and the model parameters are the recovery time after diagnosis T<sub>rec</sub> and the time from infection to seropositivity T<sub>inf</sub>. For undiagnosed prevalence and seroprevalence, our model assumes the test positivity rate is correlated to delayed undiagnosed disease prevalence with a bias parameter b(t) modeled as a negative power function of the testing rate b(t) = [N<sub>test,τ</sub>(t)/N]<sup>–n</sup>. The additional parameters consist of the power parameter n and the initial (missed) seroprevalence SP<sub>o</sub>.  The effective rate parameter 1/T<sub>eff</sub> is time-dependent, and accounts for both T<sub>inf</sub> and ongoing diagnoses so as to not “double count.”  Prevalence and seroprevalence are evaluated with a lag time t<sub>lag</sub>, assumed equal to half the averaging time τ/2. In <b>B)</b>, the diagonal lines represent different values of the bias parameter. In <b>C)</b>, the relationship between testing rate and bias parameter is illustrated. Here the shaded region represents different powers n ranging from 0.1 (lower bound bias) to 0.9 (upper bound bias), the solid line represents n=½.</p>"))),
+        tabPanel("Download Excel Calculator",downloadButton("downloadData", "Download Excel Calculator Version"),
+                 HTML("<p>This Excel spreadsheet reproduces the calculations given user-supplied data, for fixed (user-modifiable) model parameters.  It is pre-loaded with data for Texas from Covid Tracking Project.</p>"))
     ),
     hr(),
     HTML(paste0("<p>Updated with data from <a href='https://covidtracking.com'>The COVID Tracking Project</a> through ",max(alldat$date),
                               ". Prevalence and seroprevalence estimates calculated through ",
                               max(predquant.RE$date),".</p><b>Note:</b> No further updates due to availability of COVID-19 vaccinations in January 2021 and <a href='https://covidtracking.com/analysis-updates/giving-thanks-and-looking-ahead-our-data-collection-work-is-done'>ending of COVID Tracking Project data collection in March 2021</a>.")),
     hr(),
-    HTML("<p><b>Citation: </b>Chiu and Ndeffo-Mbah (2021). Using Test Positivity and Reported Case Rates to Estimate State-Level COVID-19 Prevalence and Seroprevalence in the United States. Provisionally Accepted by PLOS Computational Biology. doi:<a href=''>TBD</a>.</p>"),
-    HTML("<p><b>Source code and data: </b><a href='https://github.com/wachiuphd/COVID-19-US-Semi-Empirical'>https://github.com/wachiuphd/COVID-19-US-Semi-Empirical-published</a></p>")
+    HTML("<p><b>Citation: </b>Chiu WA, Ndeffo-Mbah ML (2021) Using test positivity and reported case rates to estimate state-level COVID-19 prevalence and seroprevalence in the United States. PLoS Comput Biol 17(9): e1009374. doi: <a href='https://doi.org/10.1371/journal.pcbi.1009374'>https://doi.org/10.1371/journal.pcbi.1009374</a>.</p>"),
+    HTML("<p><b>Source code and data: </b><a href='https://github.com/wachiuphd/COVID-19-US-Semi-Empirical-published'>https://github.com/wachiuphd/COVID-19-US-Semi-Empirical-published</a></p>")
     
 )
 
@@ -526,6 +528,12 @@ server <- function(input, output) {
              alt = "Conceptual Model")
         
     }, deleteFile = FALSE)
+    output$downloadData <- downloadHandler(
+        filename = "Semi-Empirical-Model-Spreadsheet-Version.xlsx",
+        content = function(con) {
+            file.copy("Semi-Empirical-Model-Spreadsheet-Version.xlsx",con)
+        }
+    )
 }
 
 # Run the application 
